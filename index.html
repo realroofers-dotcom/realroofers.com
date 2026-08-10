@@ -50,8 +50,9 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--patina); outline-of
 .mark{display:inline-block; line-height:0}
 .logo{height:38px; width:auto; display:block}
 @media (max-width:520px){.logo{height:31px}}
-.mast-tel{font-family:'IBM Plex Mono',monospace; font-size:15px; text-decoration:none;
-  border-bottom:1px solid rgba(233,234,230,0.4); padding-bottom:2px}
+.mast-tel{font-family:'IBM Plex Mono',monospace; font-size:17px; font-weight:500;
+  letter-spacing:0.01em; text-decoration:none;
+  border-bottom:2px solid rgba(111,183,156,0.6); padding-bottom:2px}
 
 /* ---------- hero ---------- */
 .hero{background:var(--slate); color:var(--chalk); padding:44px 0 54px}
@@ -98,15 +99,16 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--patina); outline-of
   line-height:1.03; margin:0 0 24px; max-width:15ch;
 }
 .hero h1 em{font-style:normal; color:var(--patina-lit)}
-.hero p{font-size:clamp(18px,2.4vw,21px); line-height:1.55; margin:0; max-width:50ch;
+.hero p{font-size:clamp(17px,2.3vw,20px); line-height:1.55; margin:0 0 16px; max-width:50ch;
   color:#C7CFD3}
+.hero p:last-child{margin-bottom:0}
 
 /* ---------- the water path (signature) ---------- */
 .path{background:var(--slate-deep); padding:8px 0 46px}
 .path-fig{margin:0; padding:0}
 .path-fig svg{width:100%; height:auto; display:block}
-.path figcaption{font-family:'IBM Plex Mono',monospace; font-size:12.5px; line-height:1.6;
-  color:var(--zinc); margin-top:16px; letter-spacing:0.02em}
+.path figcaption{font-family:'Newsreader',Georgia,serif; font-size:18px; line-height:1.55;
+  color:#C7CFD3; margin-top:22px; max-width:62ch}
 
 .trace{
   stroke-dasharray:5 5; animation:flow 2.6s linear infinite;
@@ -123,7 +125,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--patina); outline-of
 .band p:last-child{margin-bottom:0}
 
 /* ---------- do / don't ---------- */
-.split{display:grid; grid-template-columns:1fr 1fr; gap:0; border:1px solid var(--rule);
+.split{border:1px solid var(--rule);
   border-radius:3px; overflow:hidden}
 @media (max-width:660px){ .split{grid-template-columns:1fr} }
 .col{padding:28px 26px}
@@ -147,17 +149,6 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--patina); outline-of
 .year-note{font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.16em;
   text-transform:uppercase; color:var(--zinc); margin:0 0 30px}
 
-/* ---------- the run ---------- */
-.run{list-style:none; margin:0; padding:0}
-.run li{display:grid; grid-template-columns:78px 1fr; gap:20px; align-items:baseline;
-  padding:15px 0; border-top:1px solid var(--rule)}
-.run li:last-child{border-bottom:1px solid var(--rule)}
-.run .yr{font-family:'IBM Plex Mono',monospace; font-size:13px; letter-spacing:0.06em;
-  color:var(--patina); white-space:nowrap}
-.run .what{font-size:17.5px; line-height:1.5; margin:0}
-@media (max-width:560px){
-  .run li{grid-template-columns:1fr; gap:4px}
-}
 
 
 /* ---------- the name ---------- */
@@ -167,7 +158,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--patina); outline-of
 .name-band .eyebrow{color:#0E211B; opacity:0.72}
 .domain{font-family:'Bricolage Grotesque',sans-serif; font-weight:800;
   font-size:clamp(30px,6.2vw,52px); letter-spacing:-0.035em; line-height:1;
-  margin:0 0 22px; color:#0B1A15}
+  margin:0 0 26px; color:#0B1A15}
 .why{list-style:none; margin:0 0 26px; padding:0; max-width:60ch}
 .why li{padding:10px 0; border-top:1px solid rgba(14,33,27,0.22); font-size:17px; line-height:1.5}
 .why li:last-child{border-bottom:1px solid rgba(14,33,27,0.22)}
@@ -178,8 +169,6 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--patina); outline-of
 .fineprint{font-family:'IBM Plex Mono',monospace; font-size:12.5px; line-height:1.7;
   color:#173B31; margin-top:22px; max-width:58ch}
 
-.askprice{font-family:'IBM Plex Mono',monospace; font-size:clamp(20px,4vw,30px);
-  letter-spacing:-0.01em; color:#0B1A15; margin:-10px 0 22px; font-weight:500}
 
 /* ---------- contact ---------- */
 .reach{display:flex; flex-wrap:wrap; gap:12px; margin:0 0 22px}
@@ -294,17 +283,13 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--patina); outline-of
       <img class="mugshot" src="/mark.jpg" alt="Mark Nejmeh" onerror="this.style.display='none'">
       <p class="since-line">Mark Nejmeh</p>
       <p class="since-sub">Roofer since 1978</p>
-      <p class="co-label">Companies</p>
-      <ul class="co-list">
-        <li>Continental Roof Systems, Inc.</li>
-        <li>RealRoofers</li>
-      </ul>
     </div>
 
     <div class="col-center">
-      <p class="eyebrow">Ocean &amp; Monmouth County, New Jersey</p>
-      <h1>I find the leak by thinking about <em>the man who put the roof on</em>.</h1>
-      <p>Most roofs start leaking inside five years. Not because the work was bad &mdash; because it was done right enough not to leak for exactly that long. I have trained roofers. I know how they move across a roof, where the day catches up with them, and which corner gets cut when the light is going. So I work backwards from that.</p>
+      <p class="eyebrow">Serving Ocean &amp; Monmouth County, New Jersey</p>
+      <h1>I find leaks forensically. Patterns lead me to the problem. I understand roofs and where mistakes might have been made.</h1>
+      <p>If a mistake was made during installation it usually will not leak for about 3&ndash;5 years, then suddenly the issues will start. It might be a misplaced nail or some damage from wind. It is rarely the materials &mdash; they can last 50 years.</p>
+      <p>I will not say anything bad about another roofer. Not everyone has the same training and they only know what their boss taught them. Most roofers did their best. I am repairing their work with honor. Let me help you &mdash; there is probably no need to replace the roof.</p>
     <p class="respect">I respect any and every man on the roof. I am here to protect their efforts. No roof deserves an early death &mdash; not after the effort that has been put into it.</p>
     </div>
 
@@ -324,6 +309,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--patina); outline-of
         <li>Caulking</li>
         <li>Skylights</li>
         <li>Venting</li>
+        <li>Roof inspections &mdash; during installation, and after</li>
       </ul>
     </div>
 
@@ -333,32 +319,16 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--patina); outline-of
 <section class="path">
   <div class="wrap">
     <figure class="path-fig">
-      <svg viewBox="0 0 820 320" role="img" aria-label="A roof drawn as one man's working day: the open field done early and done well, the cut-in work around the chimney and the valley left for the end of the day, and the flashings finished last in failing light. Those late details are where the leaks start.">
-        <!-- roof plane -->
-        <path d="M70 240 L410 76 L750 240" fill="none" stroke="#7E8D96" stroke-width="2.5"/>
-        <line x1="70" y1="240" x2="750" y2="240" stroke="#7E8D96" stroke-width="2.5"/>
-
-        <!-- valley -->
-        <path d="M300 132 L360 240" fill="none" stroke="#3C4A52" stroke-width="1.5" stroke-dasharray="4 5"/>
-        <!-- chimney -->
+      <svg viewBox="0 0 820 300" role="img" aria-label="Cross-section drawing of a roof over a building.">
+        <path d="M70 232 L410 76 L750 232" fill="none" stroke="#7E8D96" stroke-width="2.5"/>
+        <line x1="70" y1="232" x2="750" y2="232" stroke="#7E8D96" stroke-width="2.5"/>
+        <path d="M300 132 L360 232" fill="none" stroke="#3C4A52" stroke-width="1.5" stroke-dasharray="4 5"/>
         <rect x="500" y="112" width="52" height="72" fill="none" stroke="#7E8D96" stroke-width="2.5"/>
-        <!-- vent pipe -->
         <line x1="612" y1="196" x2="612" y2="168" stroke="#7E8D96" stroke-width="2.5"/>
         <circle cx="612" cy="164" r="5" fill="none" stroke="#7E8D96" stroke-width="2.5"/>
-
-        <!-- early, good work: the open field -->
-        <text x="150" y="196" font-family="IBM Plex Mono, monospace" font-size="13" fill="#7E8D96">hour one</text>
-        <text x="150" y="214" font-family="IBM Plex Mono, monospace" font-size="13" fill="#7E8D96">open field, done right</text>
-
-        <!-- the late work: marked -->
-        <circle class="trace" cx="336" cy="196" r="10" fill="none" stroke="#6FB79C" stroke-width="2.5"/>
-        <circle class="trace" cx="500" cy="184" r="10" fill="none" stroke="#6FB79C" stroke-width="2.5"/>
-        <circle class="trace" cx="612" cy="196" r="10" fill="none" stroke="#6FB79C" stroke-width="2.5"/>
-
-        <text x="470" y="288" font-family="IBM Plex Mono, monospace" font-size="13" fill="#6FB79C">hour nine &mdash; valley, chimney, pipe</text>
-        <text x="470" y="306" font-family="IBM Plex Mono, monospace" font-size="13" fill="#6FB79C">cut in last, in failing light</text>
+        <line x1="120" y1="266" x2="700" y2="266" stroke="#3C4A52" stroke-width="1.5"/>
       </svg>
-      <figcaption>The open field of a roof almost never leaks. The leak is in the work a tired man did at the end of the day, and it shows up about five years later.</figcaption>
+      <figcaption>I am not going to teach you how to fix the roof &mdash; that is my secret. But I will guarantee my work for a good period of time, usually 2 years. If it does not leak again for two years it probably will not leak again.</figcaption>
     </figure>
   </div>
 </section>
@@ -366,10 +336,8 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--patina); outline-of
 <section class="band">
   <div class="wrap">
     <h2>Forensic roof repair</h2>
-    <p>A roof is a record of one man's day. The open field goes down early, fresh, and it holds. The cut-in work &mdash; valleys, chimneys, pipes, anywhere two things meet and something has to be shaped by hand &mdash; gets left for the end, when he is tired and the light is going. That work gets done right enough. Right enough lasts about five years.</p>
-    <p>I trained roofers. I know how they move, what they leave for last, and what a man tells himself is good enough at four in the afternoon. That is not an accusation &mdash; I have been that man on that roof. It is how I know where to look. So I do not start at the stain and work outward. I start with how the roof was built, and I go straight there.</p>
-    <p>Ninety-five percent of that roof is somebody&rsquo;s good work. My job is to fix the part that failed and leave the rest of his effort standing.</p>
-    <p>Then I show you what I found before I quote anything. Sometimes it is an afternoon and the right material. Sometimes the roof is genuinely finished, and you will hear that too &mdash; but after I have been up there, not before.</p>
+    <p>I do not know anyone that works on the roof that wants to do a bad job, but I do know that people are often not trained and they gather bad habits. The roof that gets done in a day usually has zero quality control, and that is when you find the most problems. The industry has shifted to subcontractors and that also leads to poor quality.</p>
+    <p>I focus on seeking oxidation, improper installation, or missed application of material. On both commercial and residential buildings, leaks can be so much more than just the roof &mdash; could be siding, masonry, windows, gutters. Fortunately I have the experience to resolve the issue.</p>
   </div>
 </section>
 
@@ -379,19 +347,10 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--patina); outline-of
       <div class="col yes">
         <h3>What I do</h3>
         <ul>
-          <li>Roof leaks — find them and repair them</li>
+          <li>Roof leaks &mdash; find them and repair them</li>
           <li>Flashing, chimney and skylight leaks</li>
           <li>Flat roof repair on small commercial buildings</li>
           <li>Gutter cleaning</li>
-        </ul>
-      </div>
-      <div class="col no">
-        <h3>What I don't do</h3>
-        <ul>
-          <li>Full roof replacements</li>
-          <li>New construction</li>
-          <li>Large commercial contracts and bid work</li>
-          <li>Crews — this is one man, by design</li>
         </ul>
       </div>
     </div>
@@ -408,48 +367,26 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--patina); outline-of
 <section class="band since">
   <div class="wrap">
     <p class="year">1978</p>
-    <p class="year-note">First roof · Still at it</p>
-    <p>I started in the roofing trade in 1978 and have worked every part of it since — residential, commercial, union, my own company. Some of the roofs I put on in the eighties are still dry. That is not luck. It is what happens when the flashings and the penetrations are done properly the first time.</p>
-    <p>I stand behind work I did forty years ago. That is a harder thing to say than it sounds, because most of the outfits that did those roofs are not around to be asked.</p>
+    <p class="year-note">First roof &middot; Still at it</p>
+    <p>I started in the roofing trade in 1978 in Crystal Lake, Illinois. I was taught by a type of person you don&rsquo;t see around here. They were Norwegians and very proud of their work ethic. I was lucky to learn from them, and have worked the same way ever since.</p>
+    <p>I have worked every part of the roofing industry since, from homes to missile sites and everything in between. Some of the roofs I put on in the eighties are still dry. That is not luck. It is what happens when the men you work with feel like they have purpose and pride. No rushing on the job and nothing but quality. Many schools, like Neptune High School and Monmouth Beach School, NJ Turnpike facilities, and about 3,000 more buildings.</p>
+    <p>I stand behind work I did forty years ago. I am slowing down now, mostly doing repairs and running a non-profit for teaching AMERICANS how to roof for the long term. That is a harder thing to say than it sounds, but I will keep doing it. I like being a roofer and I am just a roofer.</p>
   </div>
 </section>
 
-<section class="band">
-  <div class="wrap">
-    <h2>The short version</h2>
-    <ul class="run">
-      <li><span class="yr">1978</span><p class="what">First roofing job, in Illinois, at six dollars an hour.</p></li>
-      <li><span class="yr">Early 80s</span><p class="what">Conti Roofing in Saddle Brook, then the union side at JP Patti. Learned the trade properly and learned who does it badly.</p></li>
-      <li><span class="yr">1982&ndash;84</span><p class="what">Strober Brothers, the Brooklyn building supply house. First job in a suit, at twenty-two. The man who hired me is the reason for most of what came after.</p></li>
-      <li><span class="yr">Late 80s&ndash;90s</span><p class="what">Continental Roof Systems, my own commercial roofing company. Schools, federal buildings, flat roofs across New Jersey and New York.</p></li>
-      <li><span class="yr">After that</span><p class="what">National sales leadership in the finance industry. A roofer in a boardroom, which turned out to be useful.</p></li>
-      <li><span class="yr">2009</span><p class="what">Founded the Foundation for Job Creation, a 501(c)(3), self-funded from day one.</p></li>
-      <li><span class="yr">2010</span><p class="what">Drove to thirty-nine cities holding rallies about American jobs. Slept in the van. Nobody covered it.</p></li>
-      <li><span class="yr">Now</span><p class="what">Back on roofs, in Ocean and Monmouth County, doing the part of the work I was always best at.</p></li>
-    </ul>
-  </div>
-</section>
 
-<section class="band">
-  <div class="wrap">
-    <h2>Where I'm pointed</h2>
-    <p>Three things from here, and I would rather say them plainly than have you guess. I am writing a book about this trade and the life it paid for &mdash; it is called <a href="https://realroofer.com" style="color:var(--patina)">Real Roofer</a>. I am doing roof repairs, the diagnostic kind, one man and no crew. And I am working on training roofers &mdash; teaching the trade to people who need a way to earn, which is what the Foundation has been about since 2009.</p>
-    <p>None of that changes the first thing. If you have a leak and you call me, I will come look at it and I will fix it. That has not changed since 1978 and it is not going to.</p>
-  </div>
-</section>
+
+
 
 <section class="band">
   <div class="wrap">
     <h2>Ask me for an estimate</h2>
-    <p style="margin-bottom:8px">Text me. It is the easiest way to reach me and I read every one.</p>
-    <p class="sayline">Say where you are, what is happening, and send a picture if you have one.<br>
-    A picture of where the water is coming in is genuinely useful to me.</p>
+    <p style="margin-bottom:20px">Text or call me. Name, address, email &mdash; send a picture if you have one.</p>
     <div class="reach">
       <a class="text" href="sms:+17329953914">Text 732-995-3914</a>
-      <a class="ring" href="tel:+17329953914">Call instead</a>
+      <a class="ring" href="tel:+17329953914">Call 732-995-3914</a>
       <a class="mail" href="mailto:realroofers@gmail.com?subject=Estimate%20request">realroofers@gmail.com</a>
     </div>
-    <p style="margin:0">Gutter cleaning, a leak, or a flat roof you are not sure about &mdash; all the same, just tell me which.</p>
   </div>
 </section>
 
@@ -498,10 +435,10 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--patina); outline-of
   <div class="wrap">
     <p class="eyebrow">The name is for sale</p>
     <p class="domain">RealRoofers.com</p>
-    <p class="askprice">$355,000</p>
-    <h2>Somebody should own this who can carry it.</h2>
-    <p>I have held this name for years and worked under it. It is not a name I made up in a hurry &mdash; it is what people in this trade call the ones who actually know what they are doing. Two plain words, the exact thing a person types, and the .com.</p>
-    <p>The work done under it has been solid. Real buildings, real repairs, customers who still call me years later. That is not something a new brand can buy anywhere else.</p>
+    <h2>RealRoofers.com is valuable and I might sell it.</h2>
+    <p>To a supplier or a manufacturer &mdash; but you can always find me at either <a href="https://marknejmeh.com" style="color:#0B1A15">MarkNejmeh.com</a> or my telephone number, 732-995-3914.</p>
+    <p>I have held this name for years and worked under it. It is not a name I made up in a hurry &mdash; it is part of my creativity, and not adopted by enough roofers. I feel a real roofer is something different. You will have to read my upcoming book called <a href="https://realroofer.com" style="color:#0B1A15">REAL ROOFER</a> to find out. Two plain words that cannot be defined by most people, but some can.</p>
+    <p>Branding has great value when it is scaled, and RealRoofers can be scaled. I will have to see what a buyer does with it, but it is not going cheap.</p>
     <p>What I would most like is for a supplier or a manufacturer to take it. Somebody with a national reach who can put the name in front of the whole trade instead of one county in New Jersey. It deserves that.</p>
     <ul class="why">
       <li>The plural, the .com, no hyphens, nothing to spell out over the phone</li>
@@ -533,7 +470,8 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--patina); outline-of
 <footer class="foot">
   <div class="wrap">
     Real Roofers · Ocean &amp; Monmouth County, NJ · <a href="tel:+17329953914">732-995-3914</a> &middot; <a href="mailto:realroofers@gmail.com">realroofers@gmail.com</a><br>
-    Roofing since 1978. Repairs and gutters only.<br>
+    Roofing since 1978.<br>
+    NJ Lic. #13VH01806200<br>
     Always reachable at <a href="https://marknejmeh.com">MarkNejmeh.com</a>
   </div>
 </footer>
