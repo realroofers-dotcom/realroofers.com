@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Real Roofers — Forensic roof leak repair, Ocean &amp; Monmouth County NJ</title>
+<meta name="description" content="Finding where roof leaks actually start. Roof leak repair and gutter cleaning in Ocean and Monmouth County, New Jersey. Roofing since 1978.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+<link rel="canonical" href="https://realroofers.com/">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Real Roofers — Forensic roof leak repair, Ocean &amp; Monmouth County NJ">
+<meta property="og:description" content="Finding where roof leaks actually start. Roofing since 1978.">
+<meta property="og:url" content="https://realroofers.com/">
+
+<style>
+:root{
+  --slate:#1D2A31;        /* wet slate — the roof itself */
+  --slate-deep:#141E24;
+  --zinc:#7E8D96;         /* weathered flashing */
+  --chalk:#E9EAE6;        /* limewashed board */
+  --paper:#F5F5F2;
+  --patina:#4E8C77;       /* copper flashing, oxidized */
+  --patina-lit:#6FB79C;
+  --rule:rgba(29,42,49,0.14);
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--paper); color:var(--slate);
+  font-family:'Newsreader',Georgia,serif; font-size:19px; line-height:1.62;
+  font-optical-sizing:auto;
+}
+h1,h2,h3,.mono{font-family:'Bricolage Grotesque','Helvetica Neue',Arial,sans-serif}
+.mono{font-family:'IBM Plex Mono',ui-monospace,monospace}
+.wrap{width:100%; max-width:820px; margin:0 auto; padding:0 22px}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--patina); outline-offset:3px}
+
+/* ---------- masthead ---------- */
+.mast{background:var(--slate); color:var(--chalk); padding:16px 0}
+.mast-in{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap}
+.mark{font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:20px;
+  letter-spacing:-0.02em; text-transform:uppercase; text-decoration:none; line-height:1}
+.mark span{color:var(--patina-lit)}
+.mark{display:inline-block; line-height:0}
+.logo{height:38px; width:auto; display:block}
+@media (max-width:520px){.logo{height:31px}}
+.mast-tel{font-family:'IBM Plex Mono',monospace; font-size:15px; text-decoration:none;
+  border-bottom:1px solid rgba(233,234,230,0.4); padding-bottom:2px}
+
+/* ---------- hero ---------- */
+.hero{background:var(--slate); color:var(--chalk); padding:44px 0 54px}
+.hero-grid{display:grid; grid-template-columns:196px 1fr 226px; gap:38px; align-items:start}
+@media (max-width:960px){
+  .hero-grid{grid-template-columns:170px 1fr; gap:30px}
+  .hero-grid .col-right{grid-column:1 / -1}
+}
+@media (max-width:620px){
+  .hero-grid{grid-template-columns:1fr; gap:28px}
+}
+
+/* left column */
+.mugshot{width:100%; aspect-ratio:4/5; object-fit:cover; display:block;
+  border-radius:2px; filter:grayscale(1) contrast(1.06); margin-bottom:16px}
+.since-line{font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:18px;
+  letter-spacing:-0.02em; line-height:1.2; margin:0 0 4px}
+.since-sub{font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:0.12em;
+  text-transform:uppercase; color:var(--patina-lit); margin:0 0 22px}
+.co-label{font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.16em;
+  text-transform:uppercase; color:var(--zinc); margin:0 0 10px;
+  padding-top:16px; border-top:1px solid rgba(233,234,230,0.16)}
+.co-list{list-style:none; margin:0; padding:0}
+.co-list li{font-size:15.5px; line-height:1.4; color:#C7CFD3; padding:5px 0}
+
+/* right column */
+.respect{font-size:clamp(17px,2.2vw,19px); line-height:1.5; color:var(--patina-lit);
+  margin:20px 0 0; max-width:46ch; padding-top:18px; border-top:1px solid rgba(233,234,230,0.18)}
+.works-label{font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.16em;
+  text-transform:uppercase; color:var(--patina-lit); margin:0 0 12px}
+.works{list-style:none; margin:0; padding:0}
+.works li{font-size:15px; line-height:1.35; padding:7px 0;
+  border-bottom:1px solid rgba(233,234,230,0.13); color:#C7CFD3}
+.works li:first-child{border-top:1px solid rgba(233,234,230,0.13)}
+@media (max-width:960px){
+  .works{columns:2; column-gap:26px}
+  .works li{break-inside:avoid}
+}
+@media (max-width:460px){ .works{columns:1} }
+.eyebrow{font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.18em;
+  text-transform:uppercase; color:var(--patina-lit); margin:0 0 20px}
+.hero h1{
+  font-size:clamp(35px,7.2vw,62px); font-weight:800; letter-spacing:-0.03em;
+  line-height:1.03; margin:0 0 24px; max-width:15ch;
+}
+.hero h1 em{font-style:normal; color:var(--patina-lit)}
+.hero p{font-size:clamp(18px,2.4vw,21px); line-height:1.55; margin:0; max-width:50ch;
+  color:#C7CFD3}
+
+/* ---------- the water path (signature) ---------- */
+.path{background:var(--slate-deep); padding:8px 0 46px}
+.path-fig{margin:0; padding:0}
+.path-fig svg{width:100%; height:auto; display:block}
+.path figcaption{font-family:'IBM Plex Mono',monospace; font-size:12.5px; line-height:1.6;
+  color:var(--zinc); margin-top:16px; letter-spacing:0.02em}
+
+.trace{
+  stroke-dasharray:5 5; animation:flow 2.6s linear infinite;
+}
+@keyframes flow{to{stroke-dashoffset:-40}}
+@media (prefers-reduced-motion:reduce){ .trace{animation:none} }
+
+/* ---------- sections ---------- */
+.band{padding:58px 0}
+.band + .band{border-top:1px solid var(--rule)}
+.band h2{font-size:clamp(25px,4.2vw,34px); font-weight:800; letter-spacing:-0.02em;
+  line-height:1.12; margin:0 0 20px; max-width:20ch}
+.band p{margin:0 0 18px; max-width:62ch}
+.band p:last-child{margin-bottom:0}
+
+/* ---------- do / don't ---------- */
+.split{display:grid; grid-template-columns:1fr 1fr; gap:0; border:1px solid var(--rule);
+  border-radius:3px; overflow:hidden}
+@media (max-width:660px){ .split{grid-template-columns:1fr} }
+.col{padding:28px 26px}
+.col + .col{border-left:1px solid var(--rule)}
+@media (max-width:660px){ .col + .col{border-left:0; border-top:1px solid var(--rule)} }
+.col.no{background:#EFEFEC}
+.col h3{font-size:13px; font-weight:800; letter-spacing:0.14em; text-transform:uppercase;
+  margin:0 0 16px}
+.col.yes h3{color:var(--patina)}
+.col.no h3{color:var(--zinc)}
+.col ul{list-style:none; margin:0; padding:0}
+.col li{padding:9px 0; border-bottom:1px solid var(--rule); font-size:17.5px; line-height:1.45}
+.col li:last-child{border-bottom:0}
+.col.no li{color:#6C7A82}
+
+/* ---------- since ---------- */
+.since{background:var(--chalk)}
+.year{font-family:'Bricolage Grotesque',sans-serif; font-weight:800;
+  font-size:clamp(64px,15vw,132px); line-height:0.86; letter-spacing:-0.045em;
+  margin:0 0 6px; color:var(--slate)}
+.year-note{font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.16em;
+  text-transform:uppercase; color:var(--zinc); margin:0 0 30px}
+
+/* ---------- the run ---------- */
+.run{list-style:none; margin:0; padding:0}
+.run li{display:grid; grid-template-columns:78px 1fr; gap:20px; align-items:baseline;
+  padding:15px 0; border-top:1px solid var(--rule)}
+.run li:last-child{border-bottom:1px solid var(--rule)}
+.run .yr{font-family:'IBM Plex Mono',monospace; font-size:13px; letter-spacing:0.06em;
+  color:var(--patina); white-space:nowrap}
+.run .what{font-size:17.5px; line-height:1.5; margin:0}
+@media (max-width:560px){
+  .run li{grid-template-columns:1fr; gap:4px}
+}
+
+/* ---------- the book ---------- */
+.book-note{border:1px solid var(--rule); border-left:5px solid var(--patina);
+  border-radius:2px; padding:28px 28px 26px; background:#fff}
+.book-title{font-family:'Bricolage Grotesque',sans-serif; font-weight:800;
+  font-size:clamp(26px,5vw,40px); letter-spacing:-0.03em; line-height:1;
+  margin:0 0 6px}
+.book-kicker{font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.16em;
+  text-transform:uppercase; color:var(--patina); margin:0 0 18px}
+
+/* ---------- the name ---------- */
+.name-band{background:var(--patina); color:#0E211B; padding:56px 0 58px}
+.name-band h2{color:#0E211B; max-width:22ch}
+.name-band p{color:#123027; max-width:60ch}
+.name-band .eyebrow{color:#0E211B; opacity:0.72}
+.domain{font-family:'Bricolage Grotesque',sans-serif; font-weight:800;
+  font-size:clamp(30px,6.2vw,52px); letter-spacing:-0.035em; line-height:1;
+  margin:0 0 22px; color:#0B1A15}
+.why{list-style:none; margin:0 0 26px; padding:0; max-width:60ch}
+.why li{padding:10px 0; border-top:1px solid rgba(14,33,27,0.22); font-size:17px; line-height:1.5}
+.why li:last-child{border-bottom:1px solid rgba(14,33,27,0.22)}
+.offer{display:inline-block; background:#0E211B; color:var(--chalk); text-decoration:none;
+  font-family:'Bricolage Grotesque',sans-serif; font-weight:600; font-size:17px;
+  padding:14px 26px; border-radius:2px}
+.offer:hover{background:#123027}
+.fineprint{font-family:'IBM Plex Mono',monospace; font-size:12.5px; line-height:1.7;
+  color:#173B31; margin-top:22px; max-width:58ch}
+
+.askprice{font-family:'IBM Plex Mono',monospace; font-size:clamp(20px,4vw,30px);
+  letter-spacing:-0.01em; color:#0B1A15; margin:-10px 0 22px; font-weight:500}
+
+/* ---------- contact ---------- */
+.reach{display:flex; flex-wrap:wrap; gap:12px; margin:0 0 22px}
+.reach a{display:inline-block; text-decoration:none; border-radius:2px;
+  font-family:'Bricolage Grotesque',sans-serif; font-weight:600; font-size:17px;
+  padding:15px 26px; line-height:1.2}
+.reach a.text{background:var(--patina); color:#0B1A15}
+.reach a.text:hover{background:var(--patina-lit)}
+.reach a.ring{background:var(--slate); color:var(--chalk)}
+.reach a.ring:hover{background:#2A3A43}
+.reach a.mail{background:transparent; color:var(--slate); border:1px solid var(--rule)}
+.reach a.mail:hover{border-color:var(--slate)}
+.sayline{font-family:'IBM Plex Mono',monospace; font-size:13px; line-height:1.75;
+  color:var(--zinc); margin:0 0 20px}
+
+/* ---------- forms (unused) ---------- */
+.form{max-width:56ch}
+.field{margin:0 0 16px}
+.field label{display:block; font-family:'IBM Plex Mono',monospace; font-size:12px;
+  letter-spacing:0.1em; text-transform:uppercase; color:var(--zinc); margin:0 0 6px}
+.field input[type=text], .field input[type=tel], .field input[type=email], .field textarea{
+  width:100%; padding:12px 13px; font-family:'Newsreader',Georgia,serif; font-size:17px;
+  color:var(--slate); background:#fff; border:1px solid var(--rule); border-radius:2px}
+.field textarea{min-height:120px; resize:vertical; line-height:1.5}
+.field input:focus, .field textarea:focus{outline:3px solid var(--patina); outline-offset:1px}
+.check{display:flex; align-items:flex-start; gap:11px; margin:0 0 20px;
+  padding:14px 15px; border:1px solid var(--rule); border-radius:2px; background:#fff}
+.check input{width:20px; height:20px; margin:1px 0 0; flex:0 0 auto; accent-color:var(--patina)}
+.check span{font-size:17px; line-height:1.45}
+.hp{position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden}
+.submit{background:var(--slate); color:var(--chalk); border:0; cursor:pointer;
+  font-family:'Bricolage Grotesque',sans-serif; font-weight:600; font-size:17px;
+  padding:14px 28px; border-radius:2px}
+.submit:hover{background:#2A3A43}
+.submit[disabled]{opacity:0.55; cursor:default}
+.formnote{font-family:'IBM Plex Mono',monospace; font-size:13px; line-height:1.6;
+  margin:14px 0 0; min-height:1.2em}
+.formnote.ok{color:var(--patina)}
+.formnote.bad{color:#A6412F}
+
+/* ---------- reviews ---------- */
+.rev{border-left:3px solid var(--patina); padding:4px 0 4px 20px; margin:0 0 26px; max-width:60ch}
+.rev p{font-size:18px; line-height:1.55; margin:0 0 8px}
+.rev cite{font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-style:normal;
+  letter-spacing:0.06em; color:var(--zinc)}
+/* ---------- review form ---------- */
+.rform{max-width:56ch;margin:6px 0 0}
+.rf{margin:0 0 14px}
+.rf label{display:block;font-family:'IBM Plex Mono',monospace;font-size:12px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--zinc);margin:0 0 5px}
+.rf input[type=text],.rf textarea{width:100%;padding:11px 12px;
+  font-family:'Newsreader',Georgia,serif;font-size:17px;color:var(--slate);
+  background:#fff;border:1px solid var(--rule);border-radius:2px}
+.rf textarea{min-height:110px;resize:vertical;line-height:1.5}
+.rf input:focus,.rf textarea:focus{outline:3px solid var(--patina);outline-offset:1px}
+.rf2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:560px){.rf2{grid-template-columns:1fr}}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.rsend{background:var(--slate);color:var(--chalk);border:0;cursor:pointer;
+  font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:17px;
+  padding:14px 28px;border-radius:2px}
+.rsend:hover{background:#2A3A43}
+.rsend[disabled]{opacity:.55;cursor:default}
+.rnote{font-family:'IBM Plex Mono',monospace;font-size:13px;line-height:1.6;
+  margin:13px 0 0;min-height:1.2em}
+.rnote.ok{color:var(--patina)} .rnote.bad{color:#A6412F}
+
+.rev .reply{margin:14px 0 0; padding:12px 0 2px 16px; border-left:2px solid var(--rule)}
+.rev .reply p{font-size:16.5px; line-height:1.5; color:#4A5A63; margin:0 0 6px}
+.rev .reply cite{color:var(--patina)}
+.revbtn{display:inline-block; background:var(--slate); color:var(--chalk); text-decoration:none;
+  font-family:'Bricolage Grotesque',sans-serif; font-weight:600; font-size:16px;
+  padding:13px 24px; border-radius:2px}
+.revbtn:hover{background:#2A3A43}
+
+/* ---------- call ---------- */
+.call{background:var(--slate); color:var(--chalk); padding:56px 0 60px}
+.call h2{color:var(--chalk)}
+.tel{display:inline-block; font-family:'Bricolage Grotesque',sans-serif; font-weight:800;
+  font-size:clamp(31px,6.6vw,50px); letter-spacing:-0.03em; color:var(--patina-lit);
+  text-decoration:none; line-height:1.1; margin:6px 0 18px}
+.tel:hover{color:var(--chalk)}
+.call p{color:#C7CFD3; max-width:52ch}
+.call a.mailto{color:var(--patina-lit)}
+
+.callmail{font-family:'IBM Plex Mono',monospace; font-size:16px; margin:0 0 18px}
+.callmail a{color:var(--patina-lit); text-decoration:none; border-bottom:1px solid rgba(111,183,156,.45); padding-bottom:2px}
+.truckband{padding:0; border-top:1px solid var(--rule)}
+.truckband img{width:100%; height:auto; display:block}
+.truckcap{font-family:'IBM Plex Mono',monospace; font-size:12.5px; letter-spacing:.04em;
+  color:var(--zinc); padding:12px 0 0; margin:0}
+
+.foot{background:var(--slate-deep); color:var(--zinc); padding:26px 0;
+  font-family:'IBM Plex Mono',monospace; font-size:12.5px; line-height:1.7}
+.foot a{color:var(--zinc)}
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <div class="wrap mast-in">
+    <a class="mark" href="/"><img src="/logo.png" alt="Real Roofers" class="logo"></a>
+    <a class="mast-tel" href="tel:+17329953914">732-995-3914</a>
+    <a class="mast-tel" href="mailto:realroofers@gmail.com">realroofers@gmail.com</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+
+    <div class="col-left">
+      <img class="mugshot" src="/mark.jpg" alt="Mark Nejmeh" onerror="this.style.display='none'">
+      <p class="since-line">Mark Nejmeh</p>
+      <p class="since-sub">Roofer since 1978</p>
+      <p class="co-label">Companies</p>
+      <ul class="co-list">
+        <li>Continental Roof Systems, Inc.</li>
+        <li>RealRoofers</li>
+      </ul>
+    </div>
+
+    <div class="col-center">
+      <p class="eyebrow">Ocean &amp; Monmouth County, New Jersey</p>
+      <h1>I find the leak by thinking about <em>the man who put the roof on</em>.</h1>
+      <p>Most roofs start leaking inside five years. Not because the work was bad &mdash; because it was done right enough not to leak for exactly that long. I have trained roofers. I know how they move across a roof, where the day catches up with them, and which corner gets cut when the light is going. So I work backwards from that.</p>
+    <p class="respect">I respect any and every man on the roof. I am here to protect their efforts. No roof deserves an early death &mdash; not after the effort that has been put into it.</p>
+    </div>
+
+    <div class="col-right">
+      <p class="works-label">What I work on</p>
+      <ul class="works">
+        <li>Metal roofing</li>
+        <li>Shingle</li>
+        <li>Built-up roofing</li>
+        <li>TPO</li>
+        <li>EPDM</li>
+        <li>PVC</li>
+        <li>SBS modified</li>
+        <li>APP modified</li>
+        <li>Chimney flashings</li>
+        <li>Masonry waterproofing</li>
+        <li>Caulking</li>
+        <li>Skylights</li>
+        <li>Venting</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<section class="path">
+  <div class="wrap">
+    <figure class="path-fig">
+      <svg viewBox="0 0 820 320" role="img" aria-label="A roof drawn as one man's working day: the open field done early and done well, the cut-in work around the chimney and the valley left for the end of the day, and the flashings finished last in failing light. Those late details are where the leaks start.">
+        <!-- roof plane -->
+        <path d="M70 240 L410 76 L750 240" fill="none" stroke="#7E8D96" stroke-width="2.5"/>
+        <line x1="70" y1="240" x2="750" y2="240" stroke="#7E8D96" stroke-width="2.5"/>
+
+        <!-- valley -->
+        <path d="M300 132 L360 240" fill="none" stroke="#3C4A52" stroke-width="1.5" stroke-dasharray="4 5"/>
+        <!-- chimney -->
+        <rect x="500" y="112" width="52" height="72" fill="none" stroke="#7E8D96" stroke-width="2.5"/>
+        <!-- vent pipe -->
+        <line x1="612" y1="196" x2="612" y2="168" stroke="#7E8D96" stroke-width="2.5"/>
+        <circle cx="612" cy="164" r="5" fill="none" stroke="#7E8D96" stroke-width="2.5"/>
+
+        <!-- early, good work: the open field -->
+        <text x="150" y="196" font-family="IBM Plex Mono, monospace" font-size="13" fill="#7E8D96">hour one</text>
+        <text x="150" y="214" font-family="IBM Plex Mono, monospace" font-size="13" fill="#7E8D96">open field, done right</text>
+
+        <!-- the late work: marked -->
+        <circle class="trace" cx="336" cy="196" r="10" fill="none" stroke="#6FB79C" stroke-width="2.5"/>
+        <circle class="trace" cx="500" cy="184" r="10" fill="none" stroke="#6FB79C" stroke-width="2.5"/>
+        <circle class="trace" cx="612" cy="196" r="10" fill="none" stroke="#6FB79C" stroke-width="2.5"/>
+
+        <text x="470" y="288" font-family="IBM Plex Mono, monospace" font-size="13" fill="#6FB79C">hour nine &mdash; valley, chimney, pipe</text>
+        <text x="470" y="306" font-family="IBM Plex Mono, monospace" font-size="13" fill="#6FB79C">cut in last, in failing light</text>
+      </svg>
+      <figcaption>The open field of a roof almost never leaks. The leak is in the work a tired man did at the end of the day, and it shows up about five years later.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2>Forensic roof repair</h2>
+    <p>A roof is a record of one man's day. The open field goes down early, fresh, and it holds. The cut-in work &mdash; valleys, chimneys, pipes, anywhere two things meet and something has to be shaped by hand &mdash; gets left for the end, when he is tired and the light is going. That work gets done right enough. Right enough lasts about five years.</p>
+    <p>I trained roofers. I know how they move, what they leave for last, and what a man tells himself is good enough at four in the afternoon. That is not an accusation &mdash; I have been that man on that roof. It is how I know where to look. So I do not start at the stain and work outward. I start with how the roof was built, and I go straight there.</p>
+    <p>Ninety-five percent of that roof is somebody&rsquo;s good work. My job is to fix the part that failed and leave the rest of his effort standing.</p>
+    <p>Then I show you what I found before I quote anything. Sometimes it is an afternoon and the right material. Sometimes the roof is genuinely finished, and you will hear that too &mdash; but after I have been up there, not before.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="split">
+      <div class="col yes">
+        <h3>What I do</h3>
+        <ul>
+          <li>Roof leaks — find them and repair them</li>
+          <li>Flashing, chimney and skylight leaks</li>
+          <li>Flat roof repair on small commercial buildings</li>
+          <li>Gutter cleaning</li>
+        </ul>
+      </div>
+      <div class="col no">
+        <h3>What I don't do</h3>
+        <ul>
+          <li>Full roof replacements</li>
+          <li>New construction</li>
+          <li>Large commercial contracts and bid work</li>
+          <li>Crews — this is one man, by design</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band truckband">
+  <div class="wrap">
+    <img src="/truck.jpg" alt="Real Roofers truck &mdash; ROOF REPAIR, 732.995.3914" loading="lazy">
+    <p class="truckcap">The truck. If it is parked outside, I am on the roof.</p>
+  </div>
+</section>
+
+<section class="band since">
+  <div class="wrap">
+    <p class="year">1978</p>
+    <p class="year-note">First roof · Still at it</p>
+    <p>I started in the roofing trade in 1978 and have worked every part of it since — residential, commercial, union, my own company. Some of the roofs I put on in the eighties are still dry. That is not luck. It is what happens when the flashings and the penetrations are done properly the first time.</p>
+    <p>I stand behind work I did forty years ago. That is a harder thing to say than it sounds, because most of the outfits that did those roofs are not around to be asked.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2>The short version</h2>
+    <ul class="run">
+      <li><span class="yr">1978</span><p class="what">First roofing job, in Illinois, at six dollars an hour.</p></li>
+      <li><span class="yr">Early 80s</span><p class="what">Conti Roofing in Saddle Brook, then the union side at JP Patti. Learned the trade properly and learned who does it badly.</p></li>
+      <li><span class="yr">1982&ndash;84</span><p class="what">Strober Brothers, the Brooklyn building supply house. First job in a suit, at twenty-two. The man who hired me is the reason for most of what came after.</p></li>
+      <li><span class="yr">Late 80s&ndash;90s</span><p class="what">Continental Roof Systems, my own commercial roofing company. Schools, federal buildings, flat roofs across New Jersey and New York.</p></li>
+      <li><span class="yr">After that</span><p class="what">National sales leadership in the finance industry. A roofer in a boardroom, which turned out to be useful.</p></li>
+      <li><span class="yr">2009</span><p class="what">Founded the Foundation for Job Creation, a 501(c)(3), self-funded from day one.</p></li>
+      <li><span class="yr">2010</span><p class="what">Drove to thirty-nine cities holding rallies about American jobs. Slept in the van. Nobody covered it.</p></li>
+      <li><span class="yr">Now</span><p class="what">Back on roofs, in Ocean and Monmouth County, doing the part of the work I was always best at.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2>Where I'm pointed</h2>
+    <p>Three things from here, and I would rather say them plainly than have you guess. I am writing a book about this trade and the life it paid for. I am doing roof repairs, the diagnostic kind, one man and no crew. And I am working on training roofers &mdash; teaching the trade to people who need a way to earn, which is what the Foundation has been about since 2009.</p>
+    <p>None of that changes the first thing. If you have a leak and you call me, I will come look at it and I will fix it. That has not changed since 1978 and it is not going to.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2>Ask me for an estimate</h2>
+    <p style="margin-bottom:8px">Text me. It is the easiest way to reach me and I read every one.</p>
+    <p class="sayline">Say where you are, what is happening, and send a picture if you have one.<br>
+    A picture of where the water is coming in is genuinely useful to me.</p>
+    <div class="reach">
+      <a class="text" href="sms:+17329953914">Text 732-995-3914</a>
+      <a class="ring" href="tel:+17329953914">Call instead</a>
+      <a class="mail" href="mailto:realroofers@gmail.com?subject=Estimate%20request">realroofers@gmail.com</a>
+    </div>
+    <p style="margin:0">Gutter cleaning, a leak, or a flat roof you are not sure about &mdash; all the same, just tell me which.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2>What people say</h2>
+
+    <div id="revlist"></div>
+
+    <p style="margin:0 0 20px">If I have worked on your roof &mdash; last month or thirty years ago &mdash; write it here yourself. It goes straight onto the page. Good or bad, I put them all up.</p>
+    <div class="rform">
+      <div class="rf2">
+        <div class="rf">
+          <label for="r-name">Your name</label>
+          <input type="text" id="r-name" autocomplete="name">
+        </div>
+        <div class="rf">
+          <label for="r-town">Town</label>
+          <input type="text" id="r-town">
+        </div>
+      </div>
+      <div class="rf2">
+        <div class="rf">
+          <label for="r-job">What was the job</label>
+          <input type="text" id="r-job" placeholder="Chimney flashing">
+        </div>
+        <div class="rf">
+          <label for="r-when">When</label>
+          <input type="text" id="r-when" placeholder="2019">
+        </div>
+      </div>
+      <div class="rf">
+        <label for="r-body">Your review</label>
+        <textarea id="r-body"></textarea>
+      </div>
+      <div class="hp"><label>Website<input type="text" id="r-website" tabindex="-1" autocomplete="off"></label></div>
+      <button class="rsend" id="r-send" type="button">Post it</button>
+      <p class="rnote" id="r-note" role="status" aria-live="polite"></p>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="book-note">
+      <p class="book-kicker">I am writing a book</p>
+      <p class="book-title">Real Roofer</p>
+      <p>It is not a book about roofing. There is nothing in it about hammers or hot rubber or how to lay a seam. It is about what real roofers are &mdash; the men I worked with and trained, and what they were willing to go through to make a living.</p>
+      <p>Written for roofers first, and for my three daughters. There will be an audio version, because a lot of the men I want to read it are not readers.</p>
+      <p style="margin-bottom:0">If you want to know when it is finished, email me and I will tell you.</p>
+    </div>
+  </div>
+</section>
+
+<section class="name-band">
+  <div class="wrap">
+    <p class="eyebrow">The name is for sale</p>
+    <p class="domain">RealRoofers.com</p>
+    <p class="askprice">$355,000</p>
+    <h2>Somebody should own this who can carry it.</h2>
+    <p>I have held this name for years and worked under it. It is not a name I made up in a hurry &mdash; it is what people in this trade call the ones who actually know what they are doing. Two plain words, the exact thing a person types, and the .com.</p>
+    <p>The work done under it has been solid. Real buildings, real repairs, customers who still call me years later. That is not something a new brand can buy anywhere else.</p>
+    <p>What I would most like is for a supplier or a manufacturer to take it. Somebody with a national reach who can put the name in front of the whole trade instead of one county in New Jersey. It deserves that.</p>
+    <ul class="why">
+      <li>The plural, the .com, no hyphens, nothing to spell out over the phone</li>
+      <li>Says what the business is before anybody explains it</li>
+      <li>Works for a contractor, a supplier, a manufacturer, or a training outfit</li>
+      <li>It has been a real, working business, not a parked page</li>
+    </ul>
+    <p>If you want it, tell me what you would do with it. That part matters to me, and serious offers get a serious answer.</p>
+    <a class="offer" href="mailto:realroofers@gmail.com?subject=Offer%20on%20RealRoofers.com">Make an offer</a>
+    <p class="fineprint">
+      Sold through Escrow.com, buyer and seller protected, no exceptions.<br>
+      What transfers is the domain. Not the repair business, and not my phone number. RealRoofer.com is a separate name and a separate sale.<br>
+      However this name ends up, my customers can always find me at <a href="https://marknejmeh.com" style="color:#0B1A15">MarkNejmeh.com</a> &mdash; current phone number and address, permanently.
+    </p>
+  </div>
+</section>
+
+<section class="call">
+  <div class="wrap">
+    <h2>If you have a leak, call me</h2>
+    <a class="tel" href="tel:+17329953914">732-995-3914</a>
+    <p class="callmail"><a href="mailto:realroofers@gmail.com">realroofers@gmail.com</a></p>
+    <p>Ocean and Monmouth County, New Jersey. If it is raining right now, put a bucket under it and take a picture of where the water is coming in — that picture is genuinely useful to me.</p>
+    <p>And to be clear about the two things on this page: the name is for sale, the work is not. Whoever ends up owning RealRoofers.com, I am still the one who shows up when your ceiling is dripping &mdash; and you will always find my current number at <a class="mailto" href="https://marknejmeh.com">MarkNejmeh.com</a>.</p>
+    <p style="margin-top:14px"><a class="mailto" href="mailto:realroofers@gmail.com">realroofers@gmail.com</a></p>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    Real Roofers · Ocean &amp; Monmouth County, NJ · <a href="tel:+17329953914">732-995-3914</a> &middot; <a href="mailto:realroofers@gmail.com">realroofers@gmail.com</a><br>
+    Roofing since 1978. Repairs and gutters only.<br>
+    Always reachable at <a href="https://marknejmeh.com">MarkNejmeh.com</a>
+  </div>
+</footer>
+
+
+
+<script>
+(function () {
+  var wrap = document.getElementById('revlist');
+  if (!wrap) return;
+  fetch('/api/reviews?site=realroofers')
+    .then(function (r) { return r.json(); })
+    .then(function (d) {
+      if (!d || !d.reviews || !d.reviews.length) return;
+      d.reviews.forEach(function (r) {
+        var box = document.createElement('div');
+        box.className = 'rev';
+
+        var q = document.createElement('p');
+        q.textContent = '\u201C' + r.body + '\u201D';
+        box.appendChild(q);
+
+        var c = document.createElement('cite');
+        var line = '\u2014 ' + r.name;
+        if (r.town) line += ', ' + r.town;
+        if (r.job) line += ' \u00B7 ' + r.job;
+        if (r.when_done) line += ' \u00B7 ' + r.when_done;
+        c.textContent = line;
+        box.appendChild(c);
+
+        if (r.reply) {
+          var rep = document.createElement('div');
+          rep.className = 'reply';
+          var rp = document.createElement('p');
+          rp.textContent = r.reply;
+          var rc = document.createElement('cite');
+          rc.textContent = '\u2014 Mark';
+          rep.appendChild(rp); rep.appendChild(rc);
+          box.appendChild(rep);
+        }
+        wrap.appendChild(box);
+      });
+    })
+    .catch(function () {});
+
+  var btn = document.getElementById('r-send');
+  if (btn) btn.addEventListener('click', function () {
+    var v = function (id) { var e = document.getElementById(id); return e ? e.value : ''; };
+    var n = document.getElementById('r-note');
+    var say = function (m, ok) { n.textContent = m; n.className = 'rnote ' + (ok ? 'ok' : 'bad'); };
+    btn.disabled = true; say('Posting\u2026', true);
+    fetch('/api/review', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({
+        site: 'realroofers', name: v('r-name'), town: v('r-town'), job: v('r-job'),
+        when_done: v('r-when'), body: v('r-body'), website: v('r-website')
+      })
+    })
+    .then(function (r) { return r.json().catch(function () { return { ok: false }; }); })
+    .then(function (d) {
+      if (d && d.ok) { say('Thank you. It is up.', true); setTimeout(function(){ location.reload(); }, 1200); }
+      else { say((d && d.error) || 'Did not post. Please text me instead.', false); btn.disabled = false; }
+    })
+    .catch(function () { say('Did not post. Please text me instead.', false); btn.disabled = false; });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Reviews — admin</title>
+<style>
+:root{--slate:#1D2A31;--zinc:#7E8D96;--chalk:#E9EAE6;--paper:#F5F5F2;
+  --patina:#4E8C77;--rule:rgba(29,42,49,0.16);--bad:#A6412F}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--slate);
+  font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;padding:0 0 60px}
+header{background:var(--slate);color:var(--chalk);padding:16px 18px;
+  display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+header b{font-size:16px;letter-spacing:-0.01em}
+header button{background:none;border:1px solid rgba(233,234,230,.4);color:var(--chalk);
+  padding:7px 13px;border-radius:3px;font-size:14px;cursor:pointer}
+.wrap{max-width:680px;margin:0 auto;padding:0 18px}
+h2{font-size:19px;margin:26px 0 12px}
+label{display:block;font-size:12px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--zinc);margin:0 0 5px}
+input[type=text],input[type=password],textarea,select{width:100%;padding:11px 12px;font-size:16px;
+  font-family:inherit;color:var(--slate);background:#fff;border:1px solid var(--rule);border-radius:3px}
+textarea{min-height:96px;resize:vertical}
+input:focus,textarea:focus,select:focus{outline:3px solid var(--patina);outline-offset:1px}
+.row{margin:0 0 14px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:520px){.two{grid-template-columns:1fr}}
+button.go{background:var(--slate);color:var(--chalk);border:0;padding:13px 24px;
+  border-radius:3px;font-size:16px;cursor:pointer}
+button.go:hover{background:#2A3A43}
+button.go[disabled]{opacity:.5;cursor:default}
+.note{font-size:14px;margin:12px 0 0;min-height:1.2em}
+.note.ok{color:var(--patina)} .note.bad{color:var(--bad)}
+.card{background:#fff;border:1px solid var(--rule);border-left:4px solid var(--patina);
+  border-radius:3px;padding:14px 16px;margin:0 0 12px}
+.card .who{font-size:13px;color:var(--zinc);margin:0 0 6px}
+.card .txt{margin:0 0 8px;white-space:pre-wrap}
+.card .rep{border-left:2px solid var(--rule);padding-left:12px;color:#4A5A63;
+  white-space:pre-wrap;margin:0 0 10px}
+.card .acts{display:flex;gap:10px;flex-wrap:wrap}
+.card .acts button{background:none;border:1px solid var(--rule);padding:6px 12px;
+  border-radius:3px;font-size:14px;cursor:pointer;color:var(--slate)}
+.card .acts button.del{color:var(--bad);border-color:rgba(166,65,47,.4)}
+.hidden{display:none}
+.tag{display:inline-block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+  background:#EDEDEA;color:var(--zinc);padding:2px 7px;border-radius:2px;margin-left:6px}
+</style>
+</head>
+<body>
+
+<header>
+  <b>Reviews</b>
+  <button id="out" class="hidden" type="button">Lock</button>
+</header>
+
+<div class="wrap">
+
+  <div id="gate">
+    <h2>Password</h2>
+    <div class="row">
+      <input type="password" id="pw" autocomplete="current-password">
+    </div>
+    <button class="go" id="in" type="button">Unlock</button>
+    <p class="note" id="gatenote"></p>
+  </div>
+
+  <div id="app" class="hidden">
+
+    <h2 id="formtitle">Add a review</h2>
+
+    <div class="row">
+      <label for="f-site">Which site</label>
+      <select id="f-site">
+        <option value="realroofers">realroofers.com</option>
+        <option value="jerseycity">jerseycityroofrepair.com</option>
+      </select>
+    </div>
+
+    <div class="two">
+      <div class="row">
+        <label for="f-name">Their name</label>
+        <input type="text" id="f-name">
+      </div>
+      <div class="row">
+        <label for="f-town">Town</label>
+        <input type="text" id="f-town">
+      </div>
+    </div>
+
+    <div class="two">
+      <div class="row">
+        <label for="f-job">What the job was</label>
+        <input type="text" id="f-job" placeholder="Chimney flashing">
+      </div>
+      <div class="row">
+        <label for="f-when">When</label>
+        <input type="text" id="f-when" placeholder="2019">
+      </div>
+    </div>
+
+    <div class="row">
+      <label for="f-body">What they said</label>
+      <textarea id="f-body"></textarea>
+    </div>
+
+    <div class="row">
+      <label for="f-reply">Your reply</label>
+      <textarea id="f-reply"></textarea>
+    </div>
+
+    <div class="two">
+      <div class="row">
+        <label for="f-pos">Order (higher shows first)</label>
+        <input type="text" id="f-pos" value="0">
+      </div>
+      <div class="row">
+        <label for="f-pub">Showing on the site</label>
+        <select id="f-pub">
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+      </div>
+    </div>
+
+    <button class="go" id="save" type="button">Save</button>
+    <button class="go" id="cancel" type="button" style="background:#8A959B;margin-left:8px" hidden>New</button>
+    <p class="note" id="savenote"></p>
+
+    <h2>All reviews</h2>
+    <div id="list"></div>
+
+  </div>
+</div>
+
+<script>
+(function () {
+  var KEY = 'rr_admin_key';
+  var $ = function (id) { return document.getElementById(id); };
+  var editing = 0;
+
+  function note(el, msg, ok) {
+    el.textContent = msg;
+    el.className = 'note ' + (ok ? 'ok' : 'bad');
+  }
+
+  function call(payload) {
+    return fetch('/api/admin', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        'authorization': 'Bearer ' + (sessionStorage.getItem(KEY) || '')
+      },
+      body: JSON.stringify(payload)
+    }).then(function (r) { return r.json().catch(function () { return { ok: false, error: 'Server error.' }; }); });
+  }
+
+  function unlock() {
+    var pw = $('pw').value.trim();
+    if (!pw) return;
+    sessionStorage.setItem(KEY, pw);
+    call({ action: 'list' }).then(function (d) {
+      if (d.ok) {
+        $('gate').classList.add('hidden');
+        $('app').classList.remove('hidden');
+        $('out').classList.remove('hidden');
+        render(d.reviews);
+      } else {
+        sessionStorage.removeItem(KEY);
+        note($('gatenote'), d.error || 'Wrong password.', false);
+      }
+    });
+  }
+
+  function refresh() {
+    call({ action: 'list' }).then(function (d) { if (d.ok) render(d.reviews); });
+  }
+
+  function render(rows) {
+    var list = $('list');
+    list.textContent = '';
+    if (!rows.length) {
+      var p = document.createElement('p');
+      p.style.color = '#7E8D96';
+      p.textContent = 'Nothing here yet.';
+      list.appendChild(p);
+      return;
+    }
+    rows.forEach(function (r) {
+      var card = document.createElement('div');
+      card.className = 'card';
+
+      var who = document.createElement('p');
+      who.className = 'who';
+      who.textContent = r.name + (r.town ? ', ' + r.town : '') +
+        (r.job ? ' · ' + r.job : '') + (r.when_done ? ' · ' + r.when_done : '') +
+        ' · ' + (r.site === 'jerseycity' ? 'jerseycityroofrepair.com' : 'realroofers.com');
+      if (!r.published) {
+        var tag = document.createElement('span');
+        tag.className = 'tag';
+        tag.textContent = 'hidden';
+        who.appendChild(tag);
+      }
+      card.appendChild(who);
+
+      var txt = document.createElement('p');
+      txt.className = 'txt';
+      txt.textContent = '\u201C' + r.body + '\u201D';
+      card.appendChild(txt);
+
+      if (r.reply) {
+        var rep = document.createElement('div');
+        rep.className = 'rep';
+        rep.textContent = r.reply;
+        card.appendChild(rep);
+      }
+
+      var acts = document.createElement('div');
+      acts.className = 'acts';
+
+      var ed = document.createElement('button');
+      ed.type = 'button';
+      ed.textContent = 'Edit';
+      ed.addEventListener('click', function () { load(r); });
+      acts.appendChild(ed);
+
+      var del = document.createElement('button');
+      del.type = 'button';
+      del.className = 'del';
+      del.textContent = 'Delete';
+      del.addEventListener('click', function () {
+        if (!confirm('Delete this review?')) return;
+        call({ action: 'delete', id: r.id }).then(function (d) {
+          if (d.ok) refresh();
+        });
+      });
+      acts.appendChild(del);
+
+      card.appendChild(acts);
+      list.appendChild(card);
+    });
+  }
+
+  function load(r) {
+    editing = r.id;
+    $('formtitle').textContent = 'Editing #' + r.id;
+    $('f-site').value = r.site;
+    $('f-name').value = r.name || '';
+    $('f-town').value = r.town || '';
+    $('f-job').value = r.job || '';
+    $('f-when').value = r.when_done || '';
+    $('f-body').value = r.body || '';
+    $('f-reply').value = r.reply || '';
+    $('f-pos').value = r.position || 0;
+    $('f-pub').value = String(r.published);
+    $('cancel').hidden = false;
+    window.scrollTo(0, 0);
+  }
+
+  function blank() {
+    editing = 0;
+    $('formtitle').textContent = 'Add a review';
+    ['f-name','f-town','f-job','f-when','f-body','f-reply'].forEach(function (id) { $(id).value = ''; });
+    $('f-pos').value = '0';
+    $('f-pub').value = '1';
+    $('cancel').hidden = true;
+    note($('savenote'), '', true);
+  }
+
+  $('in').addEventListener('click', unlock);
+  $('pw').addEventListener('keydown', function (e) { if (e.key === 'Enter') unlock(); });
+  $('cancel').addEventListener('click', blank);
+  $('out').addEventListener('click', function () {
+    sessionStorage.removeItem(KEY);
+    location.reload();
+  });
+
+  $('save').addEventListener('click', function () {
+    var btn = this;
+    btn.disabled = true;
+    note($('savenote'), 'Saving…', true);
+    call({
+      action: 'save',
+      id: editing,
+      site: $('f-site').value,
+      name: $('f-name').value,
+      town: $('f-town').value,
+      job: $('f-job').value,
+      when_done: $('f-when').value,
+      body: $('f-body').value,
+      reply: $('f-reply').value,
+      position: $('f-pos').value,
+      published: $('f-pub').value === '1'
+    }).then(function (d) {
+      btn.disabled = false;
+      if (d.ok) {
+        note($('savenote'), 'Saved.', true);
+        blank();
+        refresh();
+      } else {
+        note($('savenote'), d.error || 'Did not save.', false);
+      }
+    });
+  });
+
+  if (sessionStorage.getItem(KEY)) unlock();
+})();
+</script>
+</body>
+</html>
