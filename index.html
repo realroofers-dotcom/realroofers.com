@@ -56,7 +56,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--patina); outline-of
 
 /* ---------- hero ---------- */
 .hero{background:var(--slate); color:var(--chalk); padding:44px 0 54px}
-.hero-grid{display:grid; grid-template-columns:196px 1fr 226px; gap:38px; align-items:start}
+.hero-grid{display:grid; grid-template-columns:180px 1fr 210px; gap:34px; align-items:start}
 @media (max-width:960px){
   .hero-grid{grid-template-columns:170px 1fr; gap:30px}
   .hero-grid .col-right{grid-column:1 / -1}
@@ -97,9 +97,11 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--patina); outline-of
 .eyebrow{font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.18em;
   text-transform:uppercase; color:var(--patina-lit); margin:0 0 20px}
 .hero h1{
-  font-size:clamp(35px,7.2vw,62px); font-weight:800; letter-spacing:-0.03em;
-  line-height:1.03; margin:0 0 24px; max-width:15ch;
+  font-size:clamp(26px,3.1vw,42px); font-weight:800; letter-spacing:-0.025em;
+  line-height:1.12; margin:0 0 22px; max-width:26ch;
 }
+@media (max-width:960px){ .hero h1{font-size:clamp(28px,5vw,40px)} }
+@media (max-width:620px){ .hero h1{font-size:clamp(27px,7vw,36px); max-width:20ch} }
 .hero h1 em{font-style:normal; color:var(--patina-lit)}
 .hero p{font-size:clamp(17px,2.3vw,20px); line-height:1.55; margin:0 0 16px; max-width:50ch;
   color:#C7CFD3}
