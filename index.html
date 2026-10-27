@@ -394,7 +394,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--patina); outline-of
   fetch(API+'/bids'+q).then(function(r){return r.json()}).then(function(j){var b=document.getElementById('bidsbox');
    if(!j.ok||!j.bids.length){b.innerHTML='<p class="sayline">No open federal roofing bids listed'+(s?' in '+e(s):'')+' right now. New notices are added every day.</p>';return}
    b.innerHTML='<table class="btab"><tr><th>State</th><th>Job</th><th>Agency</th><th>Place</th><th>Bids due</th><th>Set-aside</th></tr>'+j.bids.map(function(x){
-    return '<tr><td>'+e(x.state)+'</td><td><a href="'+e(x.link)+'" target="_blank" rel="noopener">'+e(x.title)+'</a></td><td>'+e((x.agency||'').split('.').pop())+'</td><td>'+e(x.city)+'</td><td>'+e(x.due||'see notice')+'</td><td>'+e(x.set_aside)+'</td></tr>'}).join('')+'</table>'}).catch(function(){});
+    return '<tr><td>'+(x.state?e(x.state):'<small>see notice</small>')+'</td><td><a href="'+e(x.link)+'" target="_blank" rel="noopener">'+e(x.title)+'</a></td><td>'+e((x.agency||'').split('.').pop())+'</td><td>'+(x.city?e(x.city):'<small>see notice</small>')+'</td><td>'+e(x.due||'see notice')+'</td><td>'+e(x.set_aside)+'</td></tr>'}).join('')+'</table>'}).catch(function(){});
   fetch(API+'/awards'+q).then(function(r){return r.json()}).then(function(j){var b=document.getElementById('awardsbox');
    if(!j.ok||!j.awards.length){b.innerHTML='<p class="sayline">No awards listed'+(s?' in '+e(s):'')+' yet.</p>';return}
    b.innerHTML='<table class="btab"><tr><th>State</th><th>Date</th><th>Job</th><th>Won by</th><th>Amount</th><th>Agency</th></tr>'+j.awards.map(function(x){
