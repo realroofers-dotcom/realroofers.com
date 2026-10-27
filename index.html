@@ -356,6 +356,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--patina); outline-of
 <!-- Added 2026-10-27 · rr-1a: Mark's own words (chat 10/27), lightly cleaned for spelling only. Mark reviews before push. -->
 <nav class="band" aria-label="Sections" style="padding:22px 0;background:var(--sky)">
   <div class="wrap" style="display:flex;flex-wrap:wrap;gap:10px">
+    <a href="#bids" style="text-decoration:none;background:#fff;border:1px solid var(--rule);border-radius:10px;padding:10px 14px;font-family:'Bricolage Grotesque',sans-serif;font-weight:600">📋 Jobs to bid &amp; results</a>
     <a href="#train" style="text-decoration:none;background:#fff;border:1px solid var(--rule);border-radius:10px;padding:10px 14px;font-family:'Bricolage Grotesque',sans-serif;font-weight:600">🎓 Training</a>
     <a href="#apply" style="text-decoration:none;background:#fff;border:1px solid var(--rule);border-radius:10px;padding:10px 14px;font-family:'Bricolage Grotesque',sans-serif;font-weight:600">🏅 Apply to be a Real Roofer</a>
     <a href="#ask" style="text-decoration:none;background:#fff;border:1px solid var(--rule);border-radius:10px;padding:10px 14px;font-family:'Bricolage Grotesque',sans-serif;font-weight:600">❓ Ask a roofer</a>
@@ -363,6 +364,45 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--patina); outline-of
     <a href="#reviews" style="text-decoration:none;background:#fff;border:1px solid var(--rule);border-radius:10px;padding:10px 14px;font-family:'Bricolage Grotesque',sans-serif;font-weight:600">⭐ Reviews</a>
   </div>
 </nav>
+
+<!-- rr-2a (Mark 10/27: "list all roofing jobs up to bid", "nationwide divided by state", "we want results and jobs to bid").
+     Data: bidwire worker - open federal roofing bids (SAM.gov) and awards (FPDS), NAICS 238160. Government records only. -->
+<section class="band" id="bids" style="background:#F7FBFF">
+  <div class="wrap" style="max-width:1100px">
+    <h2>📋 Roofing jobs to bid &amp; 🏆 who won</h2>
+    <p>Federal roofing work across the country, straight from the government&rsquo;s own records, updated every day. Pick a state.</p>
+    <p><label for="bstate" style="font-weight:700">State </label><select id="bstate" style="font-size:18px;padding:8px 10px;border-radius:8px;border:1px solid var(--rule)"><option value="">All states</option></select></p>
+    <h3 style="font-size:22px;margin:22px 0 8px">📋 Open for bids</h3>
+    <div id="bidsbox" style="overflow-x:auto"><p class="sayline">Loading&hellip;</p></div>
+    <h3 style="font-size:22px;margin:26px 0 8px">🏆 Recent results: contracts awarded</h3>
+    <div id="awardsbox" style="overflow-x:auto"><p class="sayline">Loading&hellip;</p></div>
+    <p class="sayline" style="margin-top:12px">Sources: SAM.gov contract opportunities and the Federal Procurement Data System (FPDS), roofing contractors (NAICS 238160). Always read the official notice before bidding.</p>
+  </div>
+</section>
+<style>
+.btab{border-collapse:collapse;width:100%;font-size:15.5px;background:#fff}
+.btab th,.btab td{border-bottom:1px solid var(--rule);padding:8px 10px;text-align:left;vertical-align:top}
+.btab th{background:var(--sky);font-family:'Bricolage Grotesque',sans-serif}
+.btab td.n{text-align:right;white-space:nowrap}
+.btab a{color:var(--copper-dk);font-weight:600}
+</style>
+<script>
+(function(){var API='https://bidwire.realroofers.workers.dev',sel=document.getElementById('bstate'),
+ e=function(s){var d=document.createElement('div');d.textContent=s==null?'':String(s);return d.innerHTML},
+ money=function(n){return n?'$'+Math.round(n).toLocaleString('en-US'):''};
+ function load(){var s=sel.value,q=s?'?state='+s:'';
+  fetch(API+'/bids'+q).then(function(r){return r.json()}).then(function(j){var b=document.getElementById('bidsbox');
+   if(!j.ok||!j.bids.length){b.innerHTML='<p class="sayline">No open federal roofing bids listed'+(s?' in '+e(s):'')+' right now. New notices are added every day.</p>';return}
+   b.innerHTML='<table class="btab"><tr><th>State</th><th>Job</th><th>Agency</th><th>Place</th><th>Bids due</th><th>Set-aside</th></tr>'+j.bids.map(function(x){
+    return '<tr><td>'+e(x.state)+'</td><td><a href="'+e(x.link)+'" target="_blank" rel="noopener">'+e(x.title)+'</a></td><td>'+e((x.agency||'').split('.').pop())+'</td><td>'+e(x.city)+'</td><td>'+e(x.due||'see notice')+'</td><td>'+e(x.set_aside)+'</td></tr>'}).join('')+'</table>'}).catch(function(){});
+  fetch(API+'/awards'+q).then(function(r){return r.json()}).then(function(j){var b=document.getElementById('awardsbox');
+   if(!j.ok||!j.awards.length){b.innerHTML='<p class="sayline">No awards listed'+(s?' in '+e(s):'')+' yet.</p>';return}
+   b.innerHTML='<table class="btab"><tr><th>State</th><th>Date</th><th>Job</th><th>Won by</th><th>Amount</th><th>Agency</th></tr>'+j.awards.map(function(x){
+    return '<tr><td>'+e(x.state)+'</td><td>'+e(x.action_date)+'</td><td><a href="'+e(x.link)+'" target="_blank" rel="noopener">'+e(x.description||'(no description)')+'</a>'+(x.city?' <small>('+e(x.city)+')</small>':'')+'</td><td>'+e(x.recipient)+'</td><td class="n">'+money(x.amount)+'</td><td>'+e(x.agency)+'</td></tr>'}).join('')+'</table>'}).catch(function(){})}
+ fetch(API+'/states').then(function(r){return r.json()}).then(function(j){var m={};(j.open_bids||[]).concat(j.awards_120_days||[]).forEach(function(x){if(x.state)m[x.state]=1});
+  Object.keys(m).sort().forEach(function(k){var o=document.createElement('option');o.value=k;o.textContent=k;sel.appendChild(o)})}).catch(function(){});
+ sel.addEventListener('change',load);load()})();
+</script>
 
 <section class="band" id="train">
   <div class="wrap">
