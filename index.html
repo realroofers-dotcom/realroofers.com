@@ -269,6 +269,17 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--patina); outline-of
 .foot{background:#F1F4F7; color:#4A5A63; padding:26px 0;
   font-family:'IBM Plex Mono',monospace; font-size:12.5px; line-height:1.7}
 .foot a{color:#4A5A63}
+/* rr-1f (Mark 10/27: "LOGO SHOULD BE MUCH MORE PREVALENT, make sure tel number and email address also prevalent") */
+.mast .big-logo{height:110px; width:auto}
+@media (max-width:620px){.mast .big-logo{height:78px}}
+.mast-contact{display:flex; flex-direction:column; gap:10px; align-items:flex-end}
+@media (max-width:620px){.mast-contact{align-items:stretch; width:100%}}
+.mast-big{display:inline-block; text-decoration:none; font-family:'Bricolage Grotesque',sans-serif; font-weight:800;
+  border-radius:12px; padding:12px 18px; line-height:1.1; text-align:center}
+.tel-big{background:var(--copper); color:#fff; font-size:clamp(24px,3.4vw,34px)}
+.tel-big:hover{background:var(--copper-dk)}
+.mail-big{background:#fff; color:var(--slate); border:2px solid var(--copper); font-size:clamp(17px,2.2vw,22px)}
+.mail-big:hover{background:#FFF6EE}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
@@ -280,9 +291,9 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--patina); outline-of
 
 <header class="mast">
   <div class="wrap mast-in">
-    <a class="mark" href="/"><img src="/logo-light.png" alt="Real Roofers" class="logo" style="height:52px"></a>
-    <a class="mast-tel" href="tel:+17329953914">732-995-3914</a>
-    <a class="mast-tel" href="mailto:realroofers@gmail.com">realroofers@gmail.com</a>
+    <a class="mark" href="/"><img src="/logo-light.png" alt="Real Roofers" class="logo big-logo" width="371" height="120"></a>
+    <span class="mast-contact"><a class="mast-big tel-big" href="tel:+17329953914">📞 732-995-3914</a>
+    <a class="mast-big mail-big" href="mailto:realroofers@gmail.com">✉️ realroofers@gmail.com</a></span>
   </div>
 </header>
 
