@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- rr-1a 2026-10-27: brighter colors; Training, Apply to be a Real Roofer, Ask a roofer (leaddesk), RoofingContractor schema. Mark writes the content. -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -22,9 +23,9 @@
   --slate-deep:#141E24;
   --zinc:#7E8D96;         /* weathered flashing */
   --chalk:#E9EAE6;        /* limewashed board */
-  --paper:#F5F5F2;
-  --patina:#4E8C77;       /* copper flashing, oxidized */
-  --patina-lit:#6FB79C;
+  --paper:#FFFFFF;  --sky:#EAF5FF; --copper:#E07B24; --copper-dk:#B85F12;
+  --patina:#1F7A5C;
+  --patina-lit:#1F7A5C;
   --rule:rgba(29,42,49,0.14);
 }
 
@@ -42,7 +43,7 @@ a{color:inherit}
 a:focus-visible,button:focus-visible{outline:3px solid var(--patina); outline-offset:3px}
 
 /* ---------- masthead ---------- */
-.mast{background:var(--slate); color:var(--chalk); padding:16px 0}
+.mast{background:#fff; color:var(--slate); padding:14px 0; border-bottom:4px solid var(--copper)}
 .mast-in{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap}
 .mark{font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:20px;
   letter-spacing:-0.02em; text-transform:uppercase; text-decoration:none; line-height:1}
@@ -52,10 +53,10 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--patina); outline-of
 @media (max-width:520px){.logo{height:31px}}
 .mast-tel{font-family:'IBM Plex Mono',monospace; font-size:17px; font-weight:500;
   letter-spacing:0.01em; text-decoration:none;
-  border-bottom:2px solid rgba(111,183,156,0.6); padding-bottom:2px}
+  border-bottom:2px solid var(--copper); padding-bottom:2px}
 
 /* ---------- hero ---------- */
-.hero{background:var(--slate); color:var(--chalk); padding:44px 0 54px}
+.hero{background:linear-gradient(180deg,var(--sky),#fff); color:var(--slate); padding:44px 0 54px}
 .hero-grid{display:grid; grid-template-columns:180px 1fr 210px; gap:34px; align-items:start}
 @media (max-width:960px){
   .hero-grid{grid-template-columns:170px 1fr; gap:30px}
@@ -67,28 +68,28 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--patina); outline-of
 
 /* left column */
 .mugshot{width:100%; aspect-ratio:4/5; object-fit:cover; display:block;
-  border-radius:2px; filter:grayscale(1) contrast(1.06); margin-bottom:16px}
+  border-radius:10px; margin-bottom:16px; box-shadow:0 6px 18px rgba(0,0,0,.15)}
 .since-line{font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:18px;
   letter-spacing:-0.02em; line-height:1.2; margin:0 0 4px}
 .since-sub{font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:0.12em;
   text-transform:uppercase; color:var(--patina-lit); margin:0 0 22px}
 .chill{font-family:'Newsreader',Georgia,serif; font-size:16px; line-height:1.45;
-  color:#C7CFD3; margin:0 0 20px}
+  color:#3B4A54; margin:0 0 20px}
 .co-label{font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.16em;
   text-transform:uppercase; color:var(--zinc); margin:0 0 10px;
-  padding-top:16px; border-top:1px solid rgba(233,234,230,0.16)}
+  padding-top:16px; border-top:1px solid var(--rule)}
 .co-list{list-style:none; margin:0; padding:0}
-.co-list li{font-size:15.5px; line-height:1.4; color:#C7CFD3; padding:5px 0}
+.co-list li{font-size:15.5px; line-height:1.4; color:#3B4A54; padding:5px 0}
 
 /* right column */
 .respect{font-size:clamp(17px,2.2vw,19px); line-height:1.5; color:var(--patina-lit);
-  margin:20px 0 0; max-width:46ch; padding-top:18px; border-top:1px solid rgba(233,234,230,0.18)}
+  margin:20px 0 0; max-width:46ch; padding-top:18px; border-top:1px solid var(--rule)}
 .works-label{font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.16em;
   text-transform:uppercase; color:var(--patina-lit); margin:0 0 12px}
 .works{list-style:none; margin:0; padding:0}
 .works li{font-size:15px; line-height:1.35; padding:7px 0;
-  border-bottom:1px solid rgba(233,234,230,0.13); color:#C7CFD3}
-.works li:first-child{border-top:1px solid rgba(233,234,230,0.13)}
+  border-bottom:1px solid var(--rule); color:#3B4A54}
+.works li:first-child{border-top:1px solid var(--rule)}
 @media (max-width:960px){
   .works{columns:2; column-gap:26px}
   .works li{break-inside:avoid}
@@ -102,17 +103,17 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--patina); outline-of
 }
 @media (max-width:960px){ .hero h1{font-size:clamp(28px,5vw,40px)} }
 @media (max-width:620px){ .hero h1{font-size:clamp(27px,7vw,36px); max-width:20ch} }
-.hero h1 em{font-style:normal; color:var(--patina-lit)}
+.hero h1 em{font-style:normal; color:var(--copper-dk)}
 .hero p{font-size:clamp(17px,2.3vw,20px); line-height:1.55; margin:0 0 16px; max-width:50ch;
-  color:#C7CFD3}
+  color:#2E3C45}
 .hero p:last-child{margin-bottom:0}
 
 /* ---------- the water path (signature) ---------- */
-.path{background:var(--slate-deep); padding:8px 0 46px}
+.path{background:var(--sky); padding:8px 0 46px}
 .path-fig{margin:0; padding:0}
 .path-fig svg{width:100%; height:auto; display:block}
 .path figcaption{font-family:'Newsreader',Georgia,serif; font-size:18px; line-height:1.55;
-  color:#C7CFD3; margin-top:22px; max-width:62ch}
+  color:#2E3C45; margin-top:22px; max-width:62ch}
 
 .trace{
   stroke-dasharray:5 5; animation:flow 2.6s linear infinite;
@@ -179,8 +180,8 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--patina); outline-of
 .reach a{display:inline-block; text-decoration:none; border-radius:2px;
   font-family:'Bricolage Grotesque',sans-serif; font-weight:600; font-size:17px;
   padding:15px 26px; line-height:1.2}
-.reach a.text{background:var(--patina); color:#0B1A15}
-.reach a.text:hover{background:var(--patina-lit)}
+.reach a.text{background:var(--copper); color:#fff}
+.reach a.text:hover{background:var(--copper-dk)}
 .reach a.ring{background:var(--slate); color:var(--chalk)}
 .reach a.ring:hover{background:#2A3A43}
 .reach a.mail{background:transparent; color:var(--slate); border:1px solid var(--rule)}
@@ -249,32 +250,37 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--patina); outline-of
 .revbtn:hover{background:#2A3A43}
 
 /* ---------- call ---------- */
-.call{background:var(--slate); color:var(--chalk); padding:56px 0 60px}
-.call h2{color:var(--chalk)}
+.call{background:var(--copper); color:#fff; padding:56px 0 60px}
+.call h2{color:#fff}
 .tel{display:inline-block; font-family:'Bricolage Grotesque',sans-serif; font-weight:800;
-  font-size:clamp(31px,6.6vw,50px); letter-spacing:-0.03em; color:var(--patina-lit);
+  font-size:clamp(31px,6.6vw,50px); letter-spacing:-0.03em; color:#fff;
   text-decoration:none; line-height:1.1; margin:6px 0 18px}
-.tel:hover{color:var(--chalk)}
-.call p{color:#C7CFD3; max-width:52ch}
-.call a.mailto{color:var(--patina-lit)}
+.tel:hover{color:#FFE8D2}
+.call p{color:#FFF4EA; max-width:52ch}
+.call a.mailto{color:#fff}
 
 .callmail{font-family:'IBM Plex Mono',monospace; font-size:16px; margin:0 0 18px}
-.callmail a{color:var(--patina-lit); text-decoration:none; border-bottom:1px solid rgba(111,183,156,.45); padding-bottom:2px}
+.callmail a{color:#fff; text-decoration:none; border-bottom:1px solid rgba(255,255,255,.6); padding-bottom:2px}
 .truckband{padding:0; border-top:1px solid var(--rule)}
 .truckband img{width:100%; height:auto; display:block}
 .truckcap{font-family:'IBM Plex Mono',monospace; font-size:12.5px; letter-spacing:.04em;
   color:var(--zinc); padding:12px 0 0; margin:0}
 
-.foot{background:var(--slate-deep); color:var(--zinc); padding:26px 0;
+.foot{background:#F1F4F7; color:#4A5A63; padding:26px 0;
   font-family:'IBM Plex Mono',monospace; font-size:12.5px; line-height:1.7}
-.foot a{color:var(--zinc)}
+.foot a{color:#4A5A63}
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"RoofingContractor","name":"Real Roofers","url":"https://realroofers.com/","telephone":"+1-732-995-3914","email":"realroofers@gmail.com","founder":{"@type":"Person","name":"Mark Nejmeh"},"foundingDate":"1978","areaServed":[{"@type":"AdministrativeArea","name":"Ocean County, New Jersey"},{"@type":"AdministrativeArea","name":"Monmouth County, New Jersey"}],"description":"Forensic roof leak repair: finding where roof leaks actually start. Roofing since 1978. Training the next generation of roofers and contractors.","knowsAbout":["roof leak repair","chimney flashing","flat roof repair","TPO","EPDM","PVC","modified bitumen","metal roofing","shingle roofing","skylights","roof inspection"]},
+ {"@type":"Person","name":"Mark Nejmeh","jobTitle":"Roofer since 1978","url":"https://marknejmeh.com/"}]}
+</script>
 </head>
 <body>
 
 <header class="mast">
   <div class="wrap mast-in">
-    <a class="mark" href="/"><img src="/logo.png" alt="Real Roofers" class="logo"></a>
+    <a class="mark" href="/"><img src="/logo.png" alt="Real Roofers" class="logo" style="background:var(--slate);padding:5px 8px;border-radius:6px;height:46px"></a>
     <a class="mast-tel" href="tel:+17329953914">732-995-3914</a>
     <a class="mast-tel" href="mailto:realroofers@gmail.com">realroofers@gmail.com</a>
   </div>
@@ -332,6 +338,81 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--patina); outline-of
     </div>
   </div>
 </section>
+
+<!-- Added 2026-10-27 · rr-1a: Mark's own words (chat 10/27), lightly cleaned for spelling only. Mark reviews before push. -->
+<nav class="band" aria-label="Sections" style="padding:22px 0;background:var(--sky)">
+  <div class="wrap" style="display:flex;flex-wrap:wrap;gap:10px">
+    <a href="#train" style="text-decoration:none;background:#fff;border:1px solid var(--rule);border-radius:10px;padding:10px 14px;font-family:'Bricolage Grotesque',sans-serif;font-weight:600">🎓 Training</a>
+    <a href="#apply" style="text-decoration:none;background:#fff;border:1px solid var(--rule);border-radius:10px;padding:10px 14px;font-family:'Bricolage Grotesque',sans-serif;font-weight:600">🏅 Apply to be a Real Roofer</a>
+    <a href="#ask" style="text-decoration:none;background:#fff;border:1px solid var(--rule);border-radius:10px;padding:10px 14px;font-family:'Bricolage Grotesque',sans-serif;font-weight:600">❓ Ask a roofer</a>
+    <a href="#reviews" style="text-decoration:none;background:#fff;border:1px solid var(--rule);border-radius:10px;padding:10px 14px;font-family:'Bricolage Grotesque',sans-serif;font-weight:600">⭐ Reviews</a>
+  </div>
+</nav>
+
+<section class="band" id="train">
+  <div class="wrap">
+    <h2>🎓 Training the next generation</h2>
+    <p>Expert roofer and experienced business person: state and federal work, private industrial roofing and housing.</p>
+    <p>My focus is to train the next generation of technology-driven contractors and product developers, to change the industry, and to make sure roofing remains a wealth-distribution segment of the economy.</p>
+    <p class="sayline">&mdash; Mark Nejmeh</p>
+  </div>
+</section>
+
+<section class="band" id="apply" style="background:#FFF6EE">
+  <div class="wrap">
+    <h2>🏅 Apply to be a Real Roofer</h2>
+    <p>Being a Real Roofer is not given out to anyone. It takes a commitment to the workers, the trade, and the bright and important operation of shelter.</p>
+    <form id="af" class="form" novalidate>
+      <input type="text" name="website" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+      <div class="field"><label for="a-name">Your name</label><input type="text" id="a-name" name="name" required maxlength="100" autocomplete="name"></div>
+      <div class="field"><label for="a-co">Company</label><input type="text" id="a-co" name="company" maxlength="150" autocomplete="organization"></div>
+      <div class="field"><label for="a-place">Town and state</label><input type="text" id="a-place" name="place" maxlength="100"></div>
+      <div class="field"><label for="a-years">Years on the roof</label><input type="text" id="a-years" name="years" maxlength="20"></div>
+      <div class="field"><label for="a-lic">License number (if your state has one)</label><input type="text" id="a-lic" name="license" maxlength="60"></div>
+      <div class="field"><label for="a-work">What kind of roofing you do</label><input type="text" id="a-work" name="work" maxlength="400" placeholder="Shingle, TPO, metal, commercial..."></div>
+      <div class="field"><label for="a-why">Why you want to be a Real Roofer</label><textarea id="a-why" name="why" maxlength="3000" required></textarea></div>
+      <div class="field"><label for="a-email">Email</label><input type="email" id="a-email" name="email" required maxlength="120" autocomplete="email"></div>
+      <div class="field"><label for="a-phone">Phone</label><input type="tel" id="a-phone" name="phone" maxlength="40" autocomplete="tel"></div>
+      <div class="field"><label for="a-web">Website</label><input type="text" id="a-web" name="web" maxlength="200"></div>
+      <button class="submit" type="submit">Apply &rarr;</button>
+      <p class="formnote" id="anote" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<section class="band" id="ask">
+  <div class="wrap">
+    <h2>❓ Ask a roofer</h2>
+    <p>Leak, flashing, flat roof, a contractor&rsquo;s estimate that doesn&rsquo;t sound right &mdash; ask it here.</p>
+    <form id="qf" class="form" novalidate>
+      <input type="text" name="website" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+      <div class="field"><label for="q-q">Your question</label><textarea id="q-q" name="question" maxlength="2000" required></textarea></div>
+      <div class="field"><label for="q-e">Your email (optional, if you want an answer back)</label><input type="email" id="q-e" name="email" maxlength="120" autocomplete="email"></div>
+      <label class="check"><input type="checkbox" id="q-pub"><span>It&rsquo;s fine to publish my question without my name so others can learn from it.</span></label>
+      <button class="submit" type="submit">Ask &rarr;</button>
+      <p class="formnote" id="qnote" role="status" aria-live="polite"></p>
+    </form>
+    <div id="alist" style="margin-top:26px" hidden><h3 style="font-size:20px;margin:0 0 10px">Answered questions</h3></div>
+    <p class="sayline" style="margin-top:14px">Published answers say who wrote them. General information, not a substitute for looking at your roof.</p>
+  </div>
+</section>
+<script>
+(function(){var API='https://leaddesk.realroofers.workers.dev';
+ function wire(fid,nid,path,build,ok){var f=document.getElementById(fid),m=document.getElementById(nid);if(!f)return;
+  f.addEventListener('submit',function(e){e.preventDefault();var d=build(f);if(typeof d==='string'){m.textContent=d;m.className='formnote bad';return}
+   var b=f.querySelector('button');b.disabled=true;m.textContent='Sending…';m.className='formnote ok';
+   fetch(API+path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)}).then(function(r){return r.json()})
+    .then(function(j){if(j.ok){f.reset();m.textContent=ok;m.className='formnote ok'}else{m.textContent=j.error||'Did not send. Please text me instead.';m.className='formnote bad'}})
+    .catch(function(){m.textContent='Did not send. Please text me instead.';m.className='formnote bad'}).finally(function(){b.disabled=false})})}
+ wire('af','anote','/apply',function(f){if(!f.name.value.trim())return'Please give your name.';if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.email.value))return'Please give a valid email.';if(f.why.value.trim().length<20)return'Please tell us why, in a few sentences.';
+   var d={};new FormData(f).forEach(function(v,k){d[k]=v});return d},'Thank you. Your application is in, and Mark reads every one.');
+ wire('qf','qnote','/ask',function(f){if(f.question.value.trim().length<10)return'Please type your question.';
+   return{site:'realroofers.com',website:f.website.value,question:f.question.value,email:f.email.value,publish_ok:document.getElementById('q-pub').checked?'yes':'no'}},'Thank you, your question is in.');
+ fetch(API+'/answers?site=realroofers.com').then(function(r){return r.json()}).then(function(j){if(!j.ok||!j.answers.length)return;var L=document.getElementById('alist'),e=function(s){var x=document.createElement('div');x.textContent=s||'';return x.innerHTML};
+  L.innerHTML+=j.answers.map(function(a){return'<div class="rev"><p><b>'+e(a.question)+'</b></p><p>'+e(a.answer)+'</p><cite>'+e(a.answered_by?'Answered by '+a.answered_by:'')+'</cite></div>'}).join('');L.hidden=false;
+  var s=document.createElement('script');s.type='application/ld+json';s.textContent=JSON.stringify({"@context":"https://schema.org","@type":"QAPage","mainEntity":j.answers.map(function(a){return{"@type":"Question","name":a.question,"acceptedAnswer":{"@type":"Answer","text":a.answer}}})});document.head.appendChild(s)}).catch(function(){});
+})();
+</script>
 
 <section class="path">
   <div class="wrap">
