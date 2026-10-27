@@ -269,16 +269,17 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--patina); outline-of
 .foot{background:#F1F4F7; color:#4A5A63; padding:26px 0;
   font-family:'IBM Plex Mono',monospace; font-size:12.5px; line-height:1.7}
 .foot a{color:#4A5A63}
-/* rr-1f (Mark 10/27: "LOGO SHOULD BE MUCH MORE PREVALENT, make sure tel number and email address also prevalent") */
-.mast .big-logo{height:110px; width:auto}
-@media (max-width:620px){.mast .big-logo{height:78px}}
-.mast-contact{display:flex; flex-direction:column; gap:10px; align-items:flex-end}
-@media (max-width:620px){.mast-contact{align-items:stretch; width:100%}}
+/* rr-1g (Mark 10/27: "logo bigger all the way across the top, number and email below") */
+.mast .mast-in{flex-direction:column; align-items:center; gap:14px; max-width:1100px}
+.mast .mark{display:block; width:100%; line-height:0}
+.mast .big-logo{width:100%; height:auto; max-width:1100px; display:block; margin:0 auto}
+.mast-contact{display:flex; flex-wrap:wrap; justify-content:center; gap:12px; width:100%}
 .mast-big{display:inline-block; text-decoration:none; font-family:'Bricolage Grotesque',sans-serif; font-weight:800;
-  border-radius:12px; padding:12px 18px; line-height:1.1; text-align:center}
-.tel-big{background:var(--copper); color:#fff; font-size:clamp(24px,3.4vw,34px)}
+  border-radius:12px; padding:12px 22px; line-height:1.1; text-align:center}
+@media (max-width:620px){.mast-big{flex:1 1 100%}}
+.tel-big{background:var(--copper); color:#fff; font-size:clamp(26px,4vw,40px)}
 .tel-big:hover{background:var(--copper-dk)}
-.mail-big{background:#fff; color:var(--slate); border:2px solid var(--copper); font-size:clamp(17px,2.2vw,22px)}
+.mail-big{background:#fff; color:var(--slate); border:2px solid var(--copper); font-size:clamp(20px,3vw,30px)}
 .mail-big:hover{background:#FFF6EE}
 </style>
 <script type="application/ld+json">
@@ -291,7 +292,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--patina); outline-of
 
 <header class="mast">
   <div class="wrap mast-in">
-    <a class="mark" href="/"><img src="/logo-light.png" alt="Real Roofers" class="logo big-logo" width="371" height="120"></a>
+    <a class="mark" href="/"><img src="/logo-light-big.png" alt="Real Roofers" class="logo big-logo" width="1113" height="360"></a>
     <span class="mast-contact"><a class="mast-big tel-big" href="tel:+17329953914">📞 732-995-3914</a>
     <a class="mast-big mail-big" href="mailto:realroofers@gmail.com">✉️ realroofers@gmail.com</a></span>
   </div>
